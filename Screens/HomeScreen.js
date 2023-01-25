@@ -11,6 +11,7 @@ import {
 import React from "react";
 import Nav from "../Components/Nav/Nav";
 import { APP_ICONS } from "../Context/settings";
+import { LinearGradient } from "expo-linear-gradient";
 
 const HomeScreen = () => {
   const [playerOne, setPlayerOne] = React.useState(0);
