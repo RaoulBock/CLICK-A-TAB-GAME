@@ -16,6 +16,9 @@ const HomeScreen = () => {
   const [playerOne, setPlayerOne] = React.useState(0);
   const [seconds, setSeconds] = React.useState(30);
   const [score, setScore] = React.useState(0);
+
+  const [highScore, setHighScore] = React.useState(0);
+
   React.useEffect(() => {
     const interval = setInterval(() => {
       setSeconds((seconds) => seconds - 1);
@@ -31,9 +34,20 @@ const HomeScreen = () => {
 
   React.useEffect(() => {}, [playerOne]);
 
+  if (score > highScore) {
+    setHighScore(score);
+  }
+
   return (
     <View style={styles.outline}>
-      <Text style={styles.title}>{seconds} seconds left</Text>
+      <View style={styles.grid}>
+        <Text style={[styles.title, { padding: 0 }]}>
+          Your high score is: {highScore}
+        </Text>
+        <Text style={[styles.title, { padding: 0 }]}>
+          {seconds} seconds left
+        </Text>
+      </View>
 
       {seconds > 0 ? (
         <TouchableOpacity
@@ -42,6 +56,7 @@ const HomeScreen = () => {
             styles.view,
             { flex: 1, alignItems: "center", justifyContent: "center" },
           ]}
+          activeOpacity={1}
         >
           <Text style={styles.text}>{playerOne}</Text>
         </TouchableOpacity>
@@ -58,7 +73,7 @@ const HomeScreen = () => {
 
       {seconds < 1 && (
         <View style={styles.grid}>
-          <Text style={styles.title}>Your score is: {score}</Text>
+          <Text style={styles.title}>Your high score is: {score}</Text>
           <TouchableOpacity
             onPress={() => {
               setSeconds(30);
@@ -85,7 +100,7 @@ const styles = StyleSheet.create({
   },
   text: {
     color: "white",
-    fontSize: 100,
+    fontSize: 150,
   },
   title: {
     backgroundColor: "#778beb",
