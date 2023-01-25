@@ -10,10 +10,12 @@ import {
 } from "react-native";
 import React from "react";
 import Nav from "../Components/Nav/Nav";
+import { APP_ICONS } from "../Context/settings";
 
 const HomeScreen = () => {
   const [playerOne, setPlayerOne] = React.useState(0);
   const [seconds, setSeconds] = React.useState(30);
+  const [score, setScore] = React.useState(0);
   React.useEffect(() => {
     const interval = setInterval(() => {
       setSeconds((seconds) => seconds - 1);
@@ -21,6 +23,7 @@ const HomeScreen = () => {
 
     if (seconds < 1) {
       setSeconds(0);
+      setScore(playerOne);
     }
 
     return () => clearInterval(interval);
@@ -31,15 +34,41 @@ const HomeScreen = () => {
   return (
     <View style={styles.outline}>
       <Text style={styles.title}>{seconds} seconds left</Text>
-      <TouchableOpacity
-        onPress={() => setPlayerOne(playerOne + 1)}
-        style={[
-          styles.view,
-          { flex: 1, alignItems: "center", justifyContent: "center" },
-        ]}
-      >
-        <Text style={styles.text}>{playerOne}</Text>
-      </TouchableOpacity>
+
+      {seconds > 0 ? (
+        <TouchableOpacity
+          onPress={() => setPlayerOne(playerOne + 1)}
+          style={[
+            styles.view,
+            { flex: 1, alignItems: "center", justifyContent: "center" },
+          ]}
+        >
+          <Text style={styles.text}>{playerOne}</Text>
+        </TouchableOpacity>
+      ) : (
+        <View
+          style={[
+            styles.view,
+            { flex: 1, alignItems: "center", justifyContent: "center" },
+          ]}
+        >
+          <Text style={styles.text}>{playerOne}</Text>
+        </View>
+      )}
+
+      {seconds < 1 && (
+        <View style={styles.grid}>
+          <Text style={styles.title}>Your score is: {score}</Text>
+          <TouchableOpacity
+            onPress={() => {
+              setSeconds(30);
+              setPlayerOne(0);
+            }}
+          >
+            <Text>{APP_ICONS.REFRESH}</Text>
+          </TouchableOpacity>
+        </View>
+      )}
     </View>
   );
 };
@@ -64,5 +93,12 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     padding: 10,
     textAlign: "right",
+  },
+  grid: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    backgroundColor: "#778beb",
+    padding: 10,
   },
 });
