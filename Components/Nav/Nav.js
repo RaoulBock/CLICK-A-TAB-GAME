@@ -5,18 +5,7 @@ import { APP_ICONS } from "../../Context/settings";
 const Nav = ({ title }) => {
   return (
     <View style={styles.outline}>
-      <Text>{title}</Text>
-      <View style={styles.grid}>
-        <TouchableOpacity style={styles.btn}>
-          <Text>{APP_ICONS.SEARCH}</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={[styles.btn, { marginHorizontal: 25 }]}>
-          <Text>{APP_ICONS.MESSAGE}</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.btn}>
-          <Text>{APP_ICONS.NOTIFICATION}</Text>
-        </TouchableOpacity>
-      </View>
+      <Text style={styles.text}>{title}</Text>
     </View>
   );
 };
@@ -28,14 +17,10 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
+    marginTop: 10,
   },
-  grid: {
-    flexDirection: "row",
-    alignItems: "center",
-  },
-  btn: {
-    backgroundColor: "#f7f9fb",
-    padding: 6,
-    borderRadius: 10,
+  text: {
+    fontWeight: "600",
+    fontSize: 24,
   },
 });
