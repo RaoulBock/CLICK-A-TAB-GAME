@@ -8,12 +8,15 @@ export const AppContext = React.createContext({
 
 const AppProvider = ({ children }) => {
   const [navPage, setNavPage] = React.useState(APP_PAGES.APP.HOME);
+  const [tab, setTab] = React.useState(0);
 
   return (
     <AppContext.Provider
       value={{
         navPage,
         setNavPage,
+        tab,
+        setTab,
       }}
     >
       {children}
