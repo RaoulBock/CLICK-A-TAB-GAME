@@ -1,21 +1,9 @@
 export const APP_PAGES = {
   APP: {
     HOME: "HOME",
+    CREATE: "CREATE",
   },
 };
-
-export const STATUS = [
-  {
-    id: 1,
-    name: "Clara",
-    img: "https://helpfulprofessor.com/wp-content/uploads/2022/10/French-woman-e1667050422125-1024x683.jpg",
-  },
-  {
-    id: 2,
-    name: "Steffie",
-    img: "https://www.rd.com/wp-content/uploads/2019/09/shutterstock_748838587-scaled.jpg",
-  },
-];
 
 import { Ionicons } from "react-native-vector-icons";
 export const APP_ICONS = {

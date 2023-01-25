@@ -6,19 +6,16 @@ import {
   StatusBar,
   ScrollView,
   Image,
+  TouchableOpacity,
 } from "react-native";
 import React from "react";
 import Nav from "../Components/Nav/Nav";
-import SlideNav from "../Components/Nav/SlideNav";
-import BottomNav from "../Components/Nav/BottomNav";
 
 const HomeScreen = () => {
   return (
     <View style={styles.outline}>
-      <Nav title={"in Stockholm"} />
-      <SlideNav />
-      <View style={{ flex: 1 }}></View>
-      <BottomNav />
+      <TouchableOpacity style={styles.view}></TouchableOpacity>
+      <TouchableOpacity style={styles.viewOne}></TouchableOpacity>
     </View>
   );
 };
@@ -29,7 +26,13 @@ const styles = StyleSheet.create({
   outline: {
     flex: 1,
     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
-    marginHorizontal: 20,
-    marginVertical: 10,
+  },
+  view: {
+    height: "50%",
+    backgroundColor: "#778beb",
+  },
+  viewOne: {
+    height: "50%",
+    backgroundColor: "#786fa6",
   },
 });
