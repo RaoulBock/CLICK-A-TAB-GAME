@@ -1,11 +1,26 @@
-import { StyleSheet, Text, View, Platform, StatusBar } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Platform,
+  StatusBar,
+  ScrollView,
+  Image,
+} from "react-native";
 import React from "react";
 import Nav from "../Components/Nav/Nav";
+import { STATUS } from "../Context/settings";
+import StatusCard from "../Components/Card/StatusCard";
 
 const HomeScreen = () => {
   return (
     <View style={styles.outline}>
       <Nav />
+      <ScrollView horizontal style={{ marginVertical: 10 }}>
+        {STATUS.map((e, i) => {
+          return <StatusCard key={i} item={e} />;
+        })}
+      </ScrollView>
     </View>
   );
 };

@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
   },
   btn: {
     backgroundColor: "#f7f9fb",
-    padding: 10,
+    padding: 6,
     borderRadius: 10,
   },
 });
