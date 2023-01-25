@@ -6,6 +6,9 @@ const Nav = ({ title }) => {
   return (
     <View style={styles.outline}>
       <Text style={styles.text}>{title}</Text>
+      <TouchableOpacity style={styles.btn}>
+        <Text>{APP_ICONS.ADD}</Text>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -17,10 +20,18 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    marginTop: 4,
   },
   text: {
     fontWeight: "600",
     fontSize: 24,
+  },
+  btn: {
+    backgroundColor: "#eee",
+    borderRadius: 50,
+    width: 40,
+    height: 40,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });

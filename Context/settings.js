@@ -55,4 +55,10 @@ export const APP_ICONS = {
       style={{ color: "#404040", fontSize: 25 }}
     />
   ),
+  ADD: (
+    <Ionicons
+      name={"ios-add-outline"}
+      style={{ color: "#404040", fontSize: 25 }}
+    />
+  ),
 };

@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    marginTop: 15,
+    marginTop: 10,
   },
   text: {
     fontWeight: "600",
