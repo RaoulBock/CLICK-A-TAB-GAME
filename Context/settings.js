@@ -37,4 +37,22 @@ export const APP_ICONS = {
       style={{ color: "#404040", fontSize: 25 }}
     />
   ),
+  HOME: (
+    <Ionicons
+      name={"ios-home-outline"}
+      style={{ color: "#404040", fontSize: 25 }}
+    />
+  ),
+  FRIENDS: (
+    <Ionicons
+      name={"ios-people-outline"}
+      style={{ color: "#404040", fontSize: 25 }}
+    />
+  ),
+  USER: (
+    <Ionicons
+      name={"ios-person-outline"}
+      style={{ color: "#404040", fontSize: 25 }}
+    />
+  ),
 };
