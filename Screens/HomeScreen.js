@@ -17,6 +17,7 @@ const HomeScreen = () => {
   const [playerOne, setPlayerOne] = React.useState(0);
   const [seconds, setSeconds] = React.useState(30);
   const [score, setScore] = React.useState(0);
+  const [gameStart, setGameStart] = React.useState(false);
 
   const [highScore, setHighScore] = React.useState(0);
 
@@ -60,6 +61,7 @@ const HomeScreen = () => {
           activeOpacity={1}
         >
           <Text style={styles.text}>{playerOne}</Text>
+          <Text style={[styles.text, { fontSize: 12 }]}>KEEP TAPPING</Text>
         </TouchableOpacity>
       ) : (
         <View
@@ -69,12 +71,20 @@ const HomeScreen = () => {
           ]}
         >
           <Text style={styles.text}>{playerOne}</Text>
+          <TouchableOpacity
+            onPress={() => {
+              setSeconds(30);
+              setPlayerOne(0);
+            }}
+          >
+            <Text>{APP_ICONS.REFRESH}</Text>
+          </TouchableOpacity>
         </View>
       )}
 
       {seconds < 1 && (
         <View style={styles.grid}>
-          <Text style={styles.title}>Your high score is: {score}</Text>
+          <Text style={styles.title}>Your score is: {score}</Text>
           <TouchableOpacity
             onPress={() => {
               setSeconds(30);
@@ -106,9 +116,10 @@ const styles = StyleSheet.create({
   title: {
     backgroundColor: "#778beb",
     color: "white",
-    fontWeight: "600",
+    fontWeight: "900",
     padding: 10,
     textAlign: "right",
+    fontSize: 16,
   },
   grid: {
     flexDirection: "row",

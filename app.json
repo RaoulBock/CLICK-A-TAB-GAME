@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "friendzone",
-    "slug": "friendzone",
+    "name": "click",
+    "slug": "clickzone",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -24,10 +24,16 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.raoulbock.clickzone"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "964f761c-55fa-4541-a6b8-18bfc44bb57b"
+      }
     }
   }
 }

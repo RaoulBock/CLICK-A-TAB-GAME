@@ -1,7 +1,7 @@
 export const APP_PAGES = {
   APP: {
     HOME: "HOME",
-    CREATE: "CREATE",
+    DASHBOARD: "DASHBOARD",
   },
 };
 
@@ -10,7 +10,13 @@ export const APP_ICONS = {
   REFRESH: (
     <Ionicons
       name={"ios-refresh-outline"}
-      style={{ color: "#fff", fontSize: 27 }}
+      style={{ color: "#fff", fontSize: 50 }}
+    />
+  ),
+  PLAY: (
+    <Ionicons
+      name={"caret-forward-outline"}
+      style={{ color: "#fff", fontSize: 100 }}
     />
   ),
 };
