@@ -70,6 +70,7 @@ const HomeScreen = () => {
             { flex: 1, alignItems: "center", justifyContent: "center" },
           ]}
         >
+           <Text style={[styles.text, { fontSize: 12 }]}>GAME OVER</Text>
           <Text style={styles.text}>{playerOne}</Text>
           <TouchableOpacity
             onPress={() => {
@@ -78,11 +79,12 @@ const HomeScreen = () => {
             }}
           >
             <Text>{APP_ICONS.REFRESH}</Text>
+           
           </TouchableOpacity>
         </View>
       )}
 
-      {seconds < 1 && (
+      {/* {seconds < 1 && (
         <View style={styles.grid}>
           <Text style={styles.title}>Your score is: {score}</Text>
           <TouchableOpacity
@@ -94,7 +96,7 @@ const HomeScreen = () => {
             <Text>{APP_ICONS.REFRESH}</Text>
           </TouchableOpacity>
         </View>
-      )}
+      )} */}
     </View>
   );
 };
